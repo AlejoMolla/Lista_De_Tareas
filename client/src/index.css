@@ -3,6 +3,70 @@ body {
     padding: 0;
 }
 
+/* Bottom Navigation */
+.bottomNav {
+    height: 45px;
+}
+
+/* Jumbotron */
 .jumbotron {
-    height: 300px;
+    height: 240px;
+}
+
+.jumbotron img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Form | Crear Tarea */
+/* .trash-svg {
+    filter: invert();
+} */
+
+/* Collapse Div */
+#collapse {
+    height: calc(100vh - 40px);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+
+/* Utilidades */
+.active {
+    color: #0a58ca !important;
+}
+
+.scrollable-md, .scrollable-sm {
+    height: 100%;
+    overflow-y: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .scrollable-md {
+        height: auto;
+        overflow-y: none;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .scrollable-sm {
+        height: auto;
+        overflow-y: none;
+    }
+}
+
+.btn-normalize {
+    background: none;
+    outline: none;
+    border: none;
+    margin: none;
+    padding: none;
+}
+
+.invert {
+    filter: invert();
 }
