@@ -4,7 +4,7 @@ export const TAREAS_DB = [
     {
         "id": 0,
         "titulo": "Tareas Rápidas",
-        "link": "/",
+        "link": "/", // El link de las tareas puede ser un cuchuflo generado, ej: XFR43FSD43432 | Así lo genero directamente y lo mando a la base de datos
         "tareas": [
             {
                 "id": 0,
