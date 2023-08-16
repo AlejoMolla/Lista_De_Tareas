@@ -18,9 +18,6 @@ export default function App() {
     // const [tareas, setTareas] = useState([]);
     // Controla la configuración del jumbotron
     const [jumbotronItem, setJumbotronItem] = useState([]);
-    // Controla el Collapse de la Bottom Nav
-    const [isOpen, setOpen] = useState(false);
-    const toggleBottomNavbar = () => setOpen(!isOpen);
 
     // Se elige un jumbotron a través de un número random
     useEffect(function() {
@@ -62,8 +59,6 @@ export default function App() {
                 <BottomNav
                     items={ITEMS_NAV}
                     sections={TAREAS_DB}
-                    isOpen={isOpen}
-                    onClick={toggleBottomNavbar}
                 />
 
             </div>
