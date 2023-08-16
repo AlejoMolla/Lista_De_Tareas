@@ -37,9 +37,9 @@ export default function Nav({items, sections, onClick = null}) {
             ))}
             <div className="border-bottom my-3 border-black-subtle"></div>
             {
-                sections.map(({id, titulo, link}) => (
-                    <li className="nav-item" key={id}>
-                        <NavItemLink texto={titulo} link={link} onClick={onClick} />
+                sections.map(({Id, Nombre, Link}) => (
+                    <li className="nav-item" key={Id}>
+                        <NavItemLink texto={Nombre} link={Link} onClick={onClick} />
                     </li>
                 ))
             }

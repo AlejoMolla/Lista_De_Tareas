@@ -32,6 +32,7 @@ const router = createBrowserRouter([{
             path: ':tarea',
             element: <TareasPage />
             // Listo, el diseño ya está terminado, solamente falta crear la base de datos y reemplazar los datos, y luego de eso quedaría agregar las funciones para añadir y eliminar tareas
+            // Ya cree la base de datos y reemplaze los datos por los de la api, ahora me tira el error que Tareas Rápidas se queda con la clase active
         }
     ]
 }]);
