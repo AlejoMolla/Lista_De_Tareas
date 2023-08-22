@@ -7,7 +7,7 @@ import addIcon from '../../static/images/plus.svg';
 import trashIcon from '../../static/images/trash.svg';
 import listIcon from '../../static/images/list.svg';
 
-export default function BottomNav({ items, sections }) {
+export default function BottomNav({ items }) {
     // Controla el Collapse de la Bottom Nav
     const [isOpen, setOpen] = useState(false);
     const toggleBottomNavbar = () => setOpen(prevState => !prevState);
@@ -31,7 +31,7 @@ export default function BottomNav({ items, sections }) {
         {isOpen &&
             <div id="collapse" className="bg-body-tertiary pt-5">
                 <div className="d-flex justify-content-center align-items-center">
-                    <Nav items={items} sections={sections} onClick={toggleBottomNavbar} />
+                    <Nav items={items} onClick={toggleBottomNavbar} />
                 </div>
             </div>
         }

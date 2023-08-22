@@ -4,7 +4,6 @@ import { Outlet } from "react-router-dom";
 // Components
 import Nav from "../components/Nav/NavComponent";
 import Jumbotron from "../components/Jumbotron/JumbotronComponent";
-import CrearTareaForm from '../components/CrearTareaForm/CrearTareaFormComponent';
 
 // Configs
 import { ITEMS_NAV } from "../static/navConfigs";
@@ -15,7 +14,7 @@ import { TAREAS_DB } from "../static/Tareas";
 import BottomNav from "../components/BottomNav/BottomNavComponent";
 
 // Context
-const APIDataContext = createContext([]);
+export const APIDataContext = createContext([]);
 
 export default function App() {
     // Guarda la información que se obtiene de la API
@@ -45,7 +44,7 @@ export default function App() {
             <div className="container-fluid">
                 <div className="row vh-100">
                     <div className="d-none d-sm-block col-sm-3 bg-body-tertiary border-end pt-sm-5">
-                        <Nav items={ITEMS_NAV} sections={APIData} />
+                        <Nav items={ITEMS_NAV} />
                     </div>
 
                     <div className="col-12 col-sm-9 p-0 scrollable-sm">
@@ -54,14 +53,12 @@ export default function App() {
                             alt={jumbotronItem.alt}
                         />
                         <div className="m-5">
-                            <CrearTareaForm />
                             <Outlet />
                         </div>
                     </div>
 
                     <BottomNav
                         items={ITEMS_NAV}
-                        sections={APIData}
                     />
 
                 </div>

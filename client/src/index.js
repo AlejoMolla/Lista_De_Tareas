@@ -8,10 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Routes
 import Root from './routes/RootPage';
 import ErrorPage from './routes/ErrorPage';
-import TareasPage from './routes/TareasPage';
+import TareasPage, { loader as tareaLoader } from './routes/TareasPage';
 import CreatePage from './routes/CreatePage';
 import TrashPage from './routes/TrashPage';
 
+// Configs
+import { generateURLKey } from './configs/generateURLKey';
 
 const router = createBrowserRouter([{
     path: '/',
@@ -30,6 +32,7 @@ const router = createBrowserRouter([{
         {
             // Usa los parametros para cargar las secciones que el usuario cree
             path: ':tarea',
+            loader: tareaLoader,
             element: <TareasPage />
             // Listo, el diseño ya está terminado, solamente falta crear la base de datos y reemplazar los datos, y luego de eso quedaría agregar las funciones para añadir y eliminar tareas
             // Ya cree la base de datos y reemplaze los datos por los de la api, ahora me tira el error que Tareas Rápidas se queda con la clase active

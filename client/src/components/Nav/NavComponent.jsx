@@ -1,4 +1,9 @@
+// Componentes
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+
+// Contexts
+import { APIDataContext } from "../../routes/RootPage";
 
 function NavItemLink({texto, link, onClick = null}) {
     if (onClick != null) {
@@ -27,7 +32,10 @@ function NavItemLink({texto, link, onClick = null}) {
     }
 }
 
-export default function Nav({items, sections, onClick = null}) {
+export default function Nav({items, onClick = null}) {
+    // Obtiene las secciones del contexto de RootPage (Provedor)
+    const APIData = useContext(APIDataContext);
+
     return <>
         <ul className="nav flex-column">
             {items.map(({id, texto, link}) => (
@@ -36,8 +44,8 @@ export default function Nav({items, sections, onClick = null}) {
                 </li>
             ))}
             <div className="border-bottom my-3 border-black-subtle"></div>
-            {
-                sections.map(({Id, Nombre, Link}) => (
+            { // Hace un mapeo de las secciones para renderizarlas en el ul
+                APIData.map(({Id, Nombre, Link}) => (
                     <li className="nav-item" key={Id}>
                         <NavItemLink texto={Nombre} link={Link} onClick={onClick} />
                     </li>
