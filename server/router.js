@@ -114,4 +114,12 @@ router.get('/all', function(req, res) {
     );
 })
 
+// -- Funcionalidades
+
+// Agregar Tarea
+router.post("/add", function(req, res) {
+    const data = req.body;
+    console.log(data);
+})
+
 module.exports = router;
